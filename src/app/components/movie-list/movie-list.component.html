@@ -1,0 +1,17 @@
+<!-- movie-list.component.html -->
+<div class="movie-card" *ngFor="let movie of movies">
+  <a  class="card-link" (click)="navigate(movie.id)">
+    <mat-card>
+      <img mat-card-image [src]="'https://image.tmdb.org/t/p/w200'+ movie.poster_path" alt="{{ movie.title }}">
+      <div class="details-overlay">
+        <mat-card-title-group>
+          <mat-card-title>{{ movie.title }}</mat-card-title>
+          <mat-card-subtitle>Release Date: {{ movie.release_date }}</mat-card-subtitle>
+        </mat-card-title-group>
+        <mat-card-content>
+          <p>{{ movie.overview }}</p>
+        </mat-card-content>
+      </div>
+    </mat-card>
+  </a>
+</div>
